@@ -14,6 +14,8 @@
 #include "third_party/blink/renderer/platform/bindings/exception_state.h"
 #include "third_party/blink/renderer/platform/weborigin/security_origin_hash.h"
 
+#include <stdio.h>
+
 namespace blink {
 
 namespace {
@@ -425,6 +427,20 @@ void NavigatorAuction::joinAdInterestGroup(ScriptState* script_state,
       .joinAdInterestGroup(script_state, group, duration_seconds,
                            exception_state);
 }
+
+
+void NavigatorAuction::listAdInterestGroups(ScriptState* script_state,
+                                            ExceptionState& exception_state) {
+  puts("GIBUJE :-------DDDD");
+}
+
+/* static */
+void NavigatorAuction::listAdInterestGroups(ScriptState* script_state,
+                                            Navigator& navigator,
+                                            ExceptionState& exception_state) {
+  puts("GIBUJE ZTATYCZNIE :-------DDDD");                                      
+}
+
 
 void NavigatorAuction::leaveAdInterestGroup(ScriptState* script_state,
                                             const AuctionAdInterestGroup* group,

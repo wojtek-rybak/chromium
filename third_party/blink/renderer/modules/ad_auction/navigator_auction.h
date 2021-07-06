@@ -54,6 +54,11 @@ class MODULES_EXPORT NavigatorAuction final
                                     Navigator&,
                                     const AuctionAdConfig*,
                                     ExceptionState&);
+  void listAdInterestGroups(ScriptState*,
+                            ExceptionState&);
+  static void listAdInterestGroups(ScriptState*,
+                                   Navigator&,
+                                   ExceptionState&);
 
   void Trace(Visitor* visitor) const override {
     visitor->Trace(interest_group_store_);

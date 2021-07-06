@@ -13,6 +13,8 @@
 #include "mojo/public/cpp/bindings/self_owned_receiver.h"
 #include "third_party/blink/public/mojom/interest_group/interest_group_types.mojom.h"
 
+#include <stdio.h>
+
 namespace content {
 
 InterestGroupManager::InterestGroupManager(const base::FilePath& path,
@@ -27,6 +29,8 @@ InterestGroupManager::~InterestGroupManager() = default;
 
 void InterestGroupManager::JoinInterestGroup(
     blink::mojom::InterestGroupPtr group) {
+  puts("HELLO WORLD!");
+  puts(group->name.c_str());
   impl_.AsyncCall(&InterestGroupStorage::JoinInterestGroup)
       .WithArgs(std::move(group));
 }
